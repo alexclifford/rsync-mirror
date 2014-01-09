@@ -1,0 +1,13 @@
+BACKUP_DIR="/var/backup_files/rsync-mirror/"
+LOG_DIR="/var/log/"
+LOG_FILE="rsync-mirror-"$(date +"%F_%H%M")".txt"
+LOG_PATH=$LOG_DIR$LOG_FILE
+LOCK_FILE="/var/backup_files/rsync-mirror-LOCK"
+EMAIL_SUBJECT="Nightly rsync-mirror"
+EMAIL_FROM="rsync-mirror@example.com"
+EMAIL_TO="it@example.com"
+RSYNC_BIN="/usr/bin/rsync"
+TEE_BIN="/usr/bin/tee"
+MAIL_BIN="/usr/bin/mail"
+HOSTS="root@server1.example.com:/var/www:server1/
+root@server2.example.com:/var/www:server2/"
