@@ -51,4 +51,4 @@ rm -f $LOCK_FILE 2>&1 | $TEE_BIN -a $LOG_PATH
 echo "" 2>&1 | $TEE_BIN -a $LOG_PATH
 
 # Email the results to $EMAIL_TO
-echo -ne "$(head $LOG_PATH)\n\n[stripped...]\n\n$(tail $LOG_PATH)" | $MAIL_BIN -a "From: "$EMAIL_FROM -s "$EMAIL_SUBJECT" $EMAIL_TO 2>&1 | $TEE_BIN -a $LOG_PATH
+echo -ne "$(cat $LOG_PATH)" | $MAIL_BIN -a "From: "$EMAIL_FROM -s "$EMAIL_SUBJECT" $EMAIL_TO 2>&1 | $TEE_BIN -a $LOG_PATH
